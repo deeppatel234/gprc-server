@@ -14,5 +14,7 @@ server.addService(pingPongProto.pingpong.PingPongService.service, {
 
 const PORT = (process.env.PORT || 8080);
 
+console.log('>>>>>>>>>>>>>>>>>>', PORT);
+
 server.bind(`0.0.0.0:${PORT}`,grpc.ServerCredentials.createInsecure());
 server.start();
