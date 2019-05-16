@@ -12,5 +12,7 @@ server.addService(pingPongProto.pingpong.PingPongService.service, {
   }
 });
 
-server.bind('localhost:8080',grpc.ServerCredentials.createInsecure());
+const PORT = (process.env.PORT || 8080);
+
+server.bind(`0.0.0.0:${PORT}`,grpc.ServerCredentials.createInsecure());
 server.start();
